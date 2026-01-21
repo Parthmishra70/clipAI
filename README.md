@@ -145,17 +145,49 @@ Required environment variables (stored in `.env` file):
 ## API Usage
 
 ### Search for Similar Products
+
+**Endpoint**: `GET /image_link/`
+
+**Parameters**:
+- `phone_modal` (string): Phone model name (e.g., "iPhone 15", "15 pro max", "Samsung Galaxy S23")
+- `image_url` (string): URL of the image to search for similar products
+
+**Example Request**:
 ```
-GET /image_link/?phone_modal=iPhone%2015&image_url=https://example.com/image.jpg
+GET /image_link/?phone_modal=15%20pro%20max&image_url=https://bot-data.s3.ap-southeast-1.wasabisys.com/upload/2026/1/livechat/177923-287915-907159858538302.jpeg
 ```
 
-**Response**:
+**Example Input**:
+- Phone Model: "15 pro max"
+- Image: See `input.jpeg` in the project directory for a sample input image
+
+**Example Output**:
 ```json
 {
-  "Name": "Product Name",
-  "Link": "https://ollypolly.in/search?q=Product+Name"
+  "Name:": "Anime With In-Built Stand Cover For  iPhone 15 Pro Max",
+  "Link:": "https://ollypolly.in/search?q=Anime+With+In-Built+Stand+Cover+For++iPhone+15+Pro+Max"
 }
 ```
+
+**Response Fields**:
+- `Name:`: Product name of the best matching result
+- `Link:`: Direct search URL on OllyPolly.in for the product
+
+**Notes**:
+- The system uses fuzzy matching for phone model names
+- Returns the most similar product with similarity score ≥ 0.85
+- If no close match is found, returns a general search link for the phone model
+- Image URL must be publicly accessible
+
+### Additional Files
+
+#### `input.jpeg`
+- **Purpose**: Sample input image for testing the API
+- **Usage**: Example image that can be used to test the similarity search functionality
+
+#### `input_process_output.csv`
+- **Purpose**: Contains example API inputs and expected outputs for testing
+- **Content**: Demonstrates the request format and response structure
 
 ## Technologies Used
 

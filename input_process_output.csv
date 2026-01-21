@@ -1,0 +1,17 @@
+Excpected output:
+{
+    "Name:": "Anime With In-Built Stand Cover For  iPhone 15 Pro Max",
+    "Link:": "https://ollypolly.in/search?q=Anime+With+In-Built+Stand+Cover+For++iPhone+15+Pro+Max"
+}
+
+Input:
+    1) 15 pro max
+    2) https://bot-data.s3.ap-southeast-1.wasabisys.com/upload/2026/1/livechat/177923-287915-907159858538302.jpeg
+    you can see image input.jpeg
+
+
+Output: 
+{
+  "Name:": "Anime With In-Built Stand Cover For  iPhone 15 Pro Max",
+  "Link:": "https://ollypolly.in/search?q=Anime+With+In-Built+Stand+Cover+For++iPhone+15+Pro+Max"
+}
